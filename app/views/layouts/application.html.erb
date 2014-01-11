@@ -2,20 +2,21 @@
 <html>
 <head>
   <title>Bookswap</title>
-  <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
+  <%= stylesheet_link_tag "application", media: "all", "data-turbolinks-track" => true %>
   <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
-  <%= stylesheet_link_tag "stylesheets/bootstrap", media: "all" %>
-  <%= stylesheet_link_tag "stylesheets/bootstrap-responsive", media: "all" %>
-  <%= stylesheet_link_tag "stylesheets/custom", media: "all" %>
-  <%= javascript_include_tag "jquery" %>
 
-  <%= javascript_include_tag "javascripts/bootstrap" %>
+  <%= javascript_include_tag "bootstrap", "data-turbolinks-track" => true %>  
+  
+  <%= stylesheet_link_tag "bootstrap", media: "all" %>
+
+  <%= stylesheet_link_tag "custom", media: "all" %>
   <%= csrf_meta_tags %>
+
 
 </head>
 <body>
-
-<%= yield %>
+	<%= render "layouts/navbar" %>
+	<%= yield %>
 
 </body>
 </html>
