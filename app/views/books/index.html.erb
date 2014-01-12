@@ -1,1 +1,11 @@
-<h1>Moi</h1>
+<div class="container">
+
+	<h1>Books</h1>
+
+	<% @books.each do |f| %>
+		<%= f.name %>
+		<%= f.writer %>
+		käyttäjältä
+		<%= f.user %>
+	<% end %>
+</div>
