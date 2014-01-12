@@ -7,9 +7,11 @@
 		</div>
 	</div>
 	<% @books.each do |f| %>
-		<%= f.name %>
-		<%= f.writer %>
-		käyttäjältä
-		<%= f.user %>
+		<div class="row">
+			<%= f.name %>
+			<%= f.writer %>
+			käyttäjältä
+			<%= f.user %>
+		</div>
 	<% end %>
 </div>
