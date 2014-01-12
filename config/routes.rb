@@ -1,6 +1,7 @@
 Bookswap::Application.routes.draw do
 
   resources :users
+  resources :books
 
   get "books/new"
   get "users/new"

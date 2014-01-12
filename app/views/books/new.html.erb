@@ -1,2 +1,42 @@
-<h1>Books#new</h1>
-<p>Find me in app/views/books/new.html.erb</p>
+<div class="container">
+
+    <div class="col-sm-offset-1 col-sm-10">		
+		<h1>Kirjan lisäys</h1><br>
+	</div>
+
+    <%= form_for @book, :html => {:class => "form-horizontal"} do |f| %>
+  	
+  	<div class="form-group">
+		<%= f.label :user, :class => "col-sm-2 control-label" %>
+      	<div class="col-sm-10">
+			<%= f.text_field :user %>
+      	</div>
+    </div>
+
+  	<div class="form-group">
+		<%= f.label :name, :class => "col-sm-2 control-label" %>
+      	<div class="col-sm-10">
+			<%= f.text_field :name %>
+      	</div>
+    </div>
+
+    <div class="form-group">
+		<%= f.label :writer, :class => "col-sm-2 control-label" %>
+      	<div class="col-sm-10">
+			<%= f.text_field :writer %>
+      	</div>
+    </div>
+
+    <div class="form-group">
+		<%= f.label :value, :class => "col-sm-2 control-label" %>
+      	<div class="col-sm-10">
+			<%= f.text_field :value %>
+      	</div>
+    </div>
+
+    <div class="form-group">
+    	<div class="col-sm-offset-2 col-sm-10">		<%= f.submit "Add new book", class: "btn btn-large btn-primary" %>
+      	</div>
+    </div>
+    <% end %>
+</div>
