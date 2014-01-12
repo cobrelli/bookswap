@@ -9,7 +9,7 @@ class BooksController < ApplicationController
 
   def create
   	@book = Book.new(user_params)
-  	if @book.save!
+  	if @book.save
       flash[:success] = "Lisäys onnistui!"
       redirect_to "/books"
     else
