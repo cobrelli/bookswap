@@ -3,6 +3,8 @@ class CreateBooks < ActiveRecord::Migration
     create_table :books do |t|
       t.string :name
       t.string :user
+      t.string :author
+      t.integer :value
 
       t.timestamps
     end
