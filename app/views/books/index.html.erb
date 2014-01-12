@@ -1,7 +1,11 @@
 <div class="container">
 
-	<h1>Books</h1>
-
+	<div class="row">
+		<div class="col-md-9"><h1>Books</h1></div>
+		<div class="col-md-3">
+			<a href="/books/new"><h1><button type="button" class="btn btn-primary">Lisää uusi kirja</b<utton></h1></a>
+		</div>
+	</div>
 	<% @books.each do |f| %>
 		<%= f.name %>
 		<%= f.writer %>
