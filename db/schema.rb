@@ -15,8 +15,8 @@ ActiveRecord::Schema.define(version: 20140117191053) do
 
   create_table "books", force: true do |t|
     t.string   "name"
-    t.string   "user"
     t.string   "author"
+    t.integer  "user_id"
     t.integer  "value"
     t.datetime "created_at"
     t.datetime "updated_at"
