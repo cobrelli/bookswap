@@ -23,6 +23,8 @@ ActiveRecord::Schema.define(version: 20140117191053) do
   end
 
   create_table "interests", force: true do |t|
+    t.integer  "user_id"
+    t.integer  "book_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
