@@ -20,4 +20,41 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
-  hello: "Hello world"
+  activerecord:
+    attributes:
+      user:
+        email: "Sähköpostiosoite"
+        name: "Nimi"
+        password: "Salasana"
+        password_confirmation: "Salasanan vahvistus"
+      book:
+        name: "Kirjan nimi"
+        author: "Kirjoittaja"
+        value: "Arvo itselle (1-5)"
+
+    errors:
+      models:
+        user:
+          attributes:
+            email:
+              blank: "puuttuu."
+              invalid: "on virheellinen."
+              taken: "on jo käytössä."
+            name:
+              blank: "puuttuu."
+            password:
+              blank: "puuttuu."
+              too_short: "liian lyhyt (väh 8 merkkiä)."
+              confirmation: "ei vastaa vahvistusta."
+            password_confirmation:
+              blank: "puuttuu."
+        book:
+          attributes:
+            author:
+              blank: "puuttuu."
+              invalid: "on virheellinen."
+            name:
+              blank: "puuttuu."
+            value:
+              blank: "puuttuu."
+
