@@ -1,10 +1,6 @@
 class BooksController < ApplicationController
   def new
   	@book = Book.new
-
-    #väliaikainen kunnes usersta kerätty tieto
-    #jotenkin kivasti
-    @user = User.first
   end
 
   def index
@@ -17,6 +13,11 @@ class BooksController < ApplicationController
 
   def create
   	@book = Book.new(user_params)
+
+
+    #väliaikainen kunnes usersta kerätty tieto
+    #jotenkin kivasti
+    @book.user = User.first
   	if @book.save
       flash[:success] = "Lisäys onnistui!"
       redirect_to "/books"

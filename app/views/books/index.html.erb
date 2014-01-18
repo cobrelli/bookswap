@@ -8,11 +8,10 @@
 	</div>
 	<% @books.each do |f| %>
 		<div class="row">
-			<%= f.name %>
-			<%= f.author %>
+			<%= link_to f.name + ", " + f.author, f %>
+			
 			käyttäjältä
-			<%= f.user %>
-			<%= link_to "Näytä", f %>
+			<%= link_to f.user.name, f.user %>
 		</div>
 	<% end %>
 </div>
