@@ -1,6 +1,10 @@
 class BooksController < ApplicationController
   def new
   	@book = Book.new
+
+    #väliaikainen kunnes usersta kerätty tieto
+    #jotenkin kivasti
+    @user = User.first
   end
 
   def index
