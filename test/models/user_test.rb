@@ -21,4 +21,23 @@ class UserTest < ActiveSupport::TestCase
   	u.name = "esa"
   	assert !u.save, "Saved user without email"
   end
+
+  test "should not accept invalid emails" do
+  	u = User.new
+  	u.name = "Erkki Esimerkki"
+
+  	emails = ["a", "a@a", "a.a", "@", 1, "-"]
+
+  	emails.each do |email|
+  		u.email = email
+  		assert !u.save, "Saved user with invalid email"
+  	end
+  end
+
+  test "should accept valid email" do
+  	u = User.new
+  	u.name = "Erkki Esimerkki"
+  	u.email = "a@b.fi"
+  	assert u.save, "Did not save valid email"
+  end
 end
