@@ -16,7 +16,7 @@ class UserTest < ActiveSupport::TestCase
   	assert !u.save, "Saved user without name"
   end
 
-  test "should not accept too long usernames" do
+  test "should not accept too long names" do
   	u = User.new
   	u.name = "a" * 51
   	u.email = "a@b.fi"
@@ -52,7 +52,12 @@ class UserTest < ActiveSupport::TestCase
   	u = User.new
   	u.name = "Erkki Esimerkki"
   	u.email = "a" * 20 + "@" + "b" * 20+ "." + "fi" * 10
-  	assert !u.save, "Saves too long email"
+  	assert !u.save, "Accepts too long email"
   end
   
+  test "should not accept duplicate emails" do
+  	user = User.create name:"Erkki Esimerkki", email:"a@b.fi"
+  	user_with_same_email = user.dup
+  	assert !user_with_same_email.save, "Accepts users with duplicate email"
+  end
 end
