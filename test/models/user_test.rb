@@ -16,6 +16,13 @@ class UserTest < ActiveSupport::TestCase
   	assert !u.save, "Saved user without name"
   end
 
+  test "should not accept too long usernames" do
+  	u = User.new
+  	u.name = "a" * 51
+  	u.email = "a@b.fi"
+  	assert !u.save, "Saves too long username"
+  end
+
   test "should not create user without email" do
   	u = User.new
   	u.name = "esa"
@@ -40,4 +47,12 @@ class UserTest < ActiveSupport::TestCase
   	u.email = "a@b.fi"
   	assert u.save, "Did not save valid email"
   end
+
+  test "should not accept too long email" do
+  	u = User.new
+  	u.name = "Erkki Esimerkki"
+  	u.email = "a" * 20 + "@" + "b" * 20+ "." + "fi" * 10
+  	assert !u.save, "Saves too long email"
+  end
+  
 end
