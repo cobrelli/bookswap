@@ -4,6 +4,7 @@ class Book < ActiveRecord::Base
 	
 	has_many :interests
 
+	validates(:user, presence: true)
 	validates(:name, presence: true)
 	validates(:author, presence: true)
 	validates(:value, presence: true)
