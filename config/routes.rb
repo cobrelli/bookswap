@@ -2,13 +2,17 @@ Bookswap::Application.routes.draw do
 
   resources :users
   resources :books
-
+  resources :sessions, only: [:new, :create]
+  
   get "books/new"
   get "users/new"
   get "static_pages/home"
   get "static_pages/help"
   get "static_pages/about"
   get "static_pages/test"
+
+  get 'signin', to: 'sessions#new'
+  delete 'signout', to: 'sessions#destroy'
 
   root :to => "static_pages#home"
 
