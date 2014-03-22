@@ -43,6 +43,7 @@ en:
             name:
               blank: "puuttuu."
             password:
+              invalid: "on virheellinen"
               blank: "puuttuu."
               too_short: "liian lyhyt (väh 8 merkkiä)."
               confirmation: "ei vastaa vahvistusta."
