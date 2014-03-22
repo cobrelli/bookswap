@@ -43,7 +43,7 @@
                   <li><a href="#">Separated link</a></li>
                 </ul>
               </li>
-              <li><a href="#">Signout</a></li>
+              <li><%= link_to 'signout', "/signout", :method => :delete %></li>
             </ul>
             <%= current_user.name %>
           <% end %>
